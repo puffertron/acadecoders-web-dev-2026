@@ -1,0 +1,102 @@
+* {
+    transition: color 0.4s ease, font-size 0.3s ease, border 0.4s ease, transform 1s ease;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0d0d0d;
+    color: #e0e0e0;
+}
+
+header {
+    background: #1a1a1a;
+    padding: 20px;
+    border-bottom: 3px solid #0099ff;
+    text-align: center;
+}
+
+header h1 {
+    color: #0099ff;
+    font-size: 32px;
+}
+
+nav {
+    background: #1a1a1a;
+    padding: 15px;
+    border-bottom: 1px solid #333;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+}
+
+nav a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+nav a:hover {
+    color: #0099ff;
+}
+
+.homepage-description, .about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #0099ff;
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #b0b0b0;
+    line-height: 1.8;
+}
+
+a {
+    color: #0099ff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* About Me Layout */
+.about-container {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+.about-image {
+    flex: 0 0 300px;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: 2px solid #0099ff;
+}
+
+.about-text {
+    flex: 1;
+}
