@@ -1,5 +1,19 @@
+const fs = require("fs");
+const https = require("https");
 const WebSocket = require("ws");
-const wss = new WebSocket.Server({ port: 8080 });
+
+// 1. Load your SSL/TLS certificates
+// Replace 'path/to/...' with the actual paths to your certificate files
+const serverConfig = {
+    key: fs.readFileSync("keys/private.key"),
+    cert: fs.readFileSync("keys/certificate.crt")
+};
+
+// 2. Create an HTTPS server
+const httpsServer = https.createServer(serverConfig);
+
+// 3. Attach the WebSocket server to the HTTPS server
+const wss = new WebSocket.Server({ server: httpsServer });
 
 const rooms = new Map();
 
@@ -25,7 +39,7 @@ function broadcast(room, data, sender) {
     if (!set) return;
 
     for (const client of set) {
-        if (client !== sender && client.readyState === 1) {
+        if (client !== sender && client.readyState === WebSocket.OPEN) { // Using standard constant
             client.send(JSON.stringify(data));
         }
     }
@@ -53,4 +67,7 @@ wss.on("connection", (ws) => {
     ws.on("close", () => leave(ws));
 });
 
-console.log("ws://localhost:8080");
+// 4. Start the HTTPS server on port 8080
+httpsServer.listen(8080, () => {
+    console.log("wss://localhost:8080");
+});

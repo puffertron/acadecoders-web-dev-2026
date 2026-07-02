@@ -1,0 +1,6 @@
+
+run in terminal:
+openssl req -x509 -newkey rsa:2048 -keyout private.key -out certificate.crt -days 365 -noenc -subj "/CN=localhost"
+
+then need to go to https://ip:8080 and press advanced > proceed to site 
+then the page1.html should work to connect to wss
