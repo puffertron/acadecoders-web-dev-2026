@@ -1,6 +1,36 @@
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
 
+const usernameE = document.getElementById("username")
+const ipE = document.getElementById("ip address")
+
+let ws;
+
+let players;
+let me;
+let room;
+
+let keys;
+
+let username;
+let ip;
+
+const button = document.getElementById("connect");
+
+let connected = false;
+
+
+
+button.addEventListener("click", () => {
+	username = usernameE.value;
+	ip = ipE.value;
+	if (!connected) {
+		connect();
+		connected = true;
+	}
+});
+
+
 function resize() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight - 70;
@@ -8,21 +38,26 @@ function resize() {
 resize();
 window.addEventListener("resize", resize);
 
+
+function connect() {
 // --- WebSocket ---
-const ws = new WebSocket("ws://10.10.0.107:8080");
+ws = new WebSocket(`ws://${ip}:8080`);
 
-const id = Math.random().toString(36).slice(2);
-const room = "room1";
+id = username + Math.random().toString().slice(2, 5);
+	
+room = "room1";
 
-const players = {};
+players = {};
 
-const me = {
+me = {
     x: canvas.width / 2,
     y: canvas.height / 2,
     speed: 4
 };
 
-const keys = {};
+keys = {};
+
+
 
 ws.onopen = () => {
     ws.send(JSON.stringify({
@@ -39,6 +74,8 @@ ws.onmessage = (e) => {
         players[data.id] = { x: data.x, y: data.y };
     }
 };
+
+}
 
 window.addEventListener("keydown", e => keys[e.key.toLowerCase()] = true);
 window.addEventListener("keyup", e => keys[e.key.toLowerCase()] = false);
@@ -64,19 +101,28 @@ function update() {
 function draw() {
     ctx.fillStyle = "#111";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
+	
 
     for (const pid in players) {
         const p = players[pid];
 
         ctx.fillStyle = pid === id ? "lime" : "white";
         ctx.fillRect(p.x - 10, p.y - 10, 20, 20);
+	ctx.font="12px Monospace"
+	ctx.fillText(pid, p.x, p.y - 50)
     }
 }
 
 function loop() {
-    update();
-    draw();
-    requestAnimationFrame(loop);
+    if (connected){
+	update();
+    	draw();
+    	requestAnimationFrame(loop);
+    }
     
+
 }
+
+
 loop();
+
