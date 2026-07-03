@@ -9,7 +9,7 @@ resize();
 window.addEventListener("resize", resize);
 
 // --- WebSocket ---
-const ws = new WebSocket("wss://10.10.0.107:8080");
+const ws = new WebSocket("ws://10.10.0.107:8080");
 
 const id = Math.random().toString(36).slice(2);
 const room = "page1";
