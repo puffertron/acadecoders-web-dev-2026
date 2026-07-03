@@ -12,7 +12,7 @@ window.addEventListener("resize", resize);
 const ws = new WebSocket("ws://10.10.0.107:8080");
 
 const id = Math.random().toString(36).slice(2);
-const room = "room1";
+const room = "room2";
 
 const players = {};
 
