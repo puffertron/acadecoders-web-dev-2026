@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About &mdash; Web Flag Hunt</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!--
+    This one's encoded as HTML entities, right here in the comment.
+    Comments don't get their entities decoded by the browser, so you'll
+    have to do that part yourself:
+    &#70;&#76;&#65;&#71;&#123;&#104;&#116;&#109;&#108;&#95;&#101;&#110;&#116;&#105;&#116;&#121;&#95;&#101;&#110;&#99;&#111;&#100;&#101;&#100;&#95;&#102;&#108;&#97;&#103;&#125;
+  -->
+
+  <header class="site-header">
+    <h1>About this page</h1>
+    <nav>
+      <a href="index.html">Home</a> |
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <p>
+      This is a tiny demo site built to practice "view-source hunting":
+      finding things that were shipped to the browser but never meant to be
+      looked at directly.
+    </p>
+
+    <!-- rot13'd text, hidden from view but present in the DOM -->
+    <p class="hidden-flag" data-hint="this text is rot13">SYNT{nobhg_cntr_ebg13_sha}</p>
+
+    <!-- an SVG with metadata nobody looks at -->
+    <svg width="1" height="1" aria-hidden="true">
+      <title>FLAG{svg_title_hidden_desc}</title>
+      <desc>Congrats on inspecting the SVG element tree.</desc>
+      <rect width="1" height="1" fill="transparent"></rect>
+    </svg>
+
+    <p>
+      Check <a href="robots.txt">robots.txt</a> and
+      <a href="sitemap.xml">sitemap.xml</a> too &mdash; crawlers read those
+      files, and so should you.
+    </p>
+  </main>
+
+  <footer>
+    <p>Built for practice. No real servers were harmed.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

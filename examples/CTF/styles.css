@@ -1,0 +1,73 @@
+:root {
+  --bg: #0f1115;
+  --fg: #e8e8e8;
+  --accent: #4cd964;
+
+  /* not everything in :root is a color... */
+  --flag: "FLAG{css_custom_property_var}";
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.6;
+}
+
+.site-header {
+  padding: 2rem;
+  border-bottom: 1px solid #2a2d34;
+}
+
+.site-header nav a {
+  color: var(--accent);
+}
+
+main {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.card {
+  border: 1px solid #2a2d34;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+  background: #171a21;
+}
+
+/* classic: hide it, but it's still very much in the DOM */
+.hidden-flag {
+  display: none;
+}
+
+/* the oldest trick in the book */
+.ghost-text {
+  color: #ffffff;
+  background: #ffffff;
+  user-select: all;
+}
+
+/* the flag lives in generated content, not in the markup at all */
+.css-content-flag::before {
+  content: "FLAG{css_before_content_secret}";
+  display: none;
+}
+
+.tiny-print {
+  font-size: 0.75rem;
+  opacity: 0.6;
+}
+
+footer {
+  padding: 2rem;
+  text-align: center;
+  opacity: 0.5;
+  font-size: 0.85rem;
+}

@@ -1,0 +1,9 @@
+# most people never read this file. that's exactly why it's a good hiding spot.
+
+User-agent: *
+Allow: /
+Disallow: /secret/FLAG{robots_txt_disallow_path}/
+Disallow: /admin/
+Sitemap: https://example.com/sitemap.xml
+
+# if you're reading this comment too, you're doing this right.

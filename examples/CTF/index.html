@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Flag Hunt</title>
+
+  <!-- meta tags aren't rendered, but view-source finds everything -->
+  <meta name="flag" content="FLAG{m3ta_tag_tr3asur3}">
+  <meta name="description" content="A tiny CTF playground. Happy hunting.">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- flag: FLAG{h7ml_c0mm3nt_1n_1ndex} -->
+
+  <header class="site-header">
+    <h1>🚩 Web Flag Hunt</h1>
+    <nav>
+      <a href="index.html">Home</a> |
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <p>
+      Somewhere on this site there are <strong>16 flags</strong> hiding in HTML,
+      CSS, JS, and even the boring files nobody reads (<code>robots.txt</code>,
+      <code>sitemap.xml</code>). Format is always <code>FLAG{"{"}...{"}"}</code>.
+    </p>
+
+    <p>Open your dev tools. Look at everything. Trust nothing that "looks empty".</p>
+
+    <!-- a div that's just... not there, visually -->
+    <div class="hidden-flag">FLAG{d1splay_n0n3_but_n0t_g0n3}</div>
+
+    <!-- white text on a white background -->
+    <p class="ghost-text">FLAG{wh1t3_0n_wh1t3_1snt_1nv1s1bl3}</p>
+
+    <!-- a data attribute holding base64. decode it. -->
+    <div id="clue-box"
+         class="card"
+         data-secret="RkxBR3tkYXRhX2F0dHJfYmFzZTY0X2QzYzBkZWR9">
+      <p>This box has a <code>data-secret</code> attribute. It's base64. Decode it.</p>
+    </div>
+
+    <!-- this element gets its "content" from CSS, not the HTML you're reading -->
+    <div class="css-content-flag" aria-hidden="true"></div>
+
+    <p>
+      This paragraph uses a CSS custom property somewhere in
+      <code>styles.css</code> for one of its flags. Read the whole file, not
+      just the selectors that look interesting.
+    </p>
+
+    <p class="tiny-print">
+      (Also: open the Network tab and reload. Something gets sent that
+      shouldn't be.)
+    </p>
+  </main>
+
+  <footer>
+    <p>AcadeCoders '26</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
