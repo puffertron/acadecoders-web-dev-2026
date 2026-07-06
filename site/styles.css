@@ -2,7 +2,7 @@
     font-family: 'Courier New', Courier, monospace;
     margin-left: 1%;
     margin-top: 1%;
-    background: rgb(57, 57, 57);
+    background: rgb(41, 41, 41);
     color: white;
     transition: font-size 0.3s ease, transform 0.3s ease, color 0.3s ease;
 }
@@ -11,11 +11,22 @@
 h1 {
     text-align: center;
 }
+h1:hover{
+    transform: scale(1.1);
+}
 
 img {
     border-radius: 10px;
     margin-top: -1%;
-    border: 1px solid white;
+    border: 3px dotted white;
+}
+#thinking {
+    width: 98%;
+    height: 15%;
+}
+#thinking:hover{
+    cursor:grab;
+    transform: scale(1.03);
 }
 
 h3, h2 {
@@ -30,6 +41,7 @@ h3:hover, h2:hover{
 a {
     font-size: large;
     font-weight: bold;
+    text-decoration: wavy underline 1.5px green;
 }
 
 a:hover {
