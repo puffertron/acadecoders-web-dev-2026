@@ -1,0 +1,44 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+    margin-left: 1%;
+    margin-top: 1%;
+    background: rgb(57, 57, 57);
+    color: white;
+    transition: font-size 0.3s ease, transform 0.3s ease, color 0.3s ease;
+}
+
+
+h1 {
+    text-align: center;
+}
+
+img {
+    border-radius: 10px;
+    margin-top: -1%;
+    border: 1px solid white;
+}
+
+h3, h2 {
+    -webkit-text-stroke: 1px green;
+}
+
+h3:hover, h2:hover{
+    transform: rotate(0.5deg);
+    font-weight: bolder;
+}
+
+a {
+    font-size: large;
+    font-weight: bold;
+}
+
+a:hover {
+    cursor: pointer;
+    font-size: larger;
+    color: rgb(126, 248, 3);
+}
+
+iframe {
+    border-radius: 2%;
+    border: 5px solid black;
+}
