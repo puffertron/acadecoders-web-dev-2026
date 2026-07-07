@@ -4,9 +4,13 @@
     margin-top: 1%;
     background: rgb(41, 41, 41);
     color: white;
-    transition: font-size 0.3s ease, transform 0.3s ease, color 0.3s ease;
+    transition: font-size 0.3s ease, transform 0.3s ease, color 0.3s ease, opacity 3s ease;
+    scrollbar-width: thin;
 }
 
+#main {
+    opacity: 0;
+}
 
 h1 {
     text-align: center;
@@ -21,8 +25,8 @@ img {
     border: 3px dotted white;
 }
 #thinking {
-    width: 98%;
-    height: 15%;
+    width: 50%;
+    height: 5%;
 }
 #thinking:hover{
     cursor:grab;
@@ -53,4 +57,11 @@ a:hover {
 iframe {
     border-radius: 2%;
     border: 5px solid black;
+}
+
+#intro {
+    border: 2px dotted green;
+    border-radius: 10px;
+    font-weight: bold;
+    font-style: italic;
 }
