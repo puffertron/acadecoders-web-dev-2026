@@ -21,11 +21,11 @@ h1:hover{
 
 #thinking {
     border-radius: 10px;
+    margin-top: -1%;
     border: 3px dotted white;
     width: 50%;
     height: 5%;
 }
-
 #thinking:hover{
     cursor:grab;
     transform: scale(1.03);
