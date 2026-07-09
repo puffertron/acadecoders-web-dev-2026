@@ -7,7 +7,7 @@
   the images as variables */
 
  :root {
-     --header-image: url('GALAXY2.JPG');
+     --header-image: url('minecraftbackground.jpg');
      --body-bg-image: url('https://sadhost.neocities.org/images/tiles/purplesky.gif');
 
      /* colors */
@@ -52,7 +52,7 @@
  body {
      font-family: 'Nunito', sans-serif;
      margin: 0;
-     background-color;black;
+     background-color: black;
      /* you can delete the line below if you'd prefer to not use an image */
 
  }
@@ -84,7 +84,7 @@
  /* the area below is for all links on your page
   EXCEPT fo*r the navigation */
  #container a {
- color: #ED64F5;
+ color: #693c17;
  font-weight: bold;
  /* if you want to remove the underline
   y ou can* add a line below here that says:
@@ -146,7 +146,7 @@
   i f you wa*nt to style them separately,
 create styles for #leftSidebar and #rightSidebar */
  aside {
-     background-color: #241445;
+     background-color: #36d911;
      width: 200px;
      padding: 20px;
      font-size: smaller;
@@ -157,7 +157,7 @@ create styles for #leftSidebar and #rightSidebar */
  /* this is the color of the main content area,
   between t*he sidebars! */
  main {
-     background-color: #43256E;
+     background-color: #693c17;
      flex: 1;
      padding: 20px;
      order: 2;
@@ -171,6 +171,7 @@ create styles for #leftSidebar and #rightSidebar */
 
  */ #leftSidebar {
      order: 1;
+
  }
 
  #rightSidebar {
@@ -190,21 +191,20 @@ create styles for #leftSidebar and #rightSidebar */
  h1,
 h2,
 h3 {
-    color: #ED64F5;
+    color: white;
 }
 
 h1 {
     font-size: 25px;
 }
 
-strong {
-    /* this styles bold text */
-    color: #ED64F5;
+p {
+    color: white;
 }
 
 /* this is just a cool box, it's the darker colored one */
 .box {
-    background-color: #13092D;
+    background-color: #36d911;
     border: 1px solid #ED64F5;
     padding: 10px;
 }
