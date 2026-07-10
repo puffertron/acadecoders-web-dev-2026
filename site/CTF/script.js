@@ -24,7 +24,7 @@
   // open devtools > Network tab, reload the page, and look for a POST
   // request that goes absolutely nowhere useful.
   function ghostRequest() {
-    fetch("https://puffertron.net/", {
+    fetch("FLAG{network_tab_saw_me_first}", {
       method: "POST",
       mode: "cors",
       headers: { "Content-Type": "application/json" },
