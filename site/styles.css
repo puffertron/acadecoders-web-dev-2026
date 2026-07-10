@@ -84,12 +84,15 @@ hr:first-of-type{
 
 #ctf {
     text-align: center;
+    font-size: 170%;
 }
-#ctf a {
-    font-size: 275%;
+#ctfParent {
+    text-align: center;
+}
+#ctfParent:hover{
+    transform: rotate(3deg);
 }
 
 #ctf:hover {
-    font-size: 150%;
-    transform: rotate(3deg);
+    font-size: 200%;
 }
