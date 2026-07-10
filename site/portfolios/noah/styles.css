@@ -6,6 +6,16 @@
   t hese ten*ded to confuse some people, so I only kept
   the images as variables */
 
+ #defaultCanvas0{
+     position: fixed !important;
+     top: 0 !important;
+     left: 0 !important;
+     width: 100% !important;
+     height: 100% !important;
+     pointer-events: none;
+}
+
+
  :root {
      --header-image: url('minecraftbackground.jpg');
      --body-bg-image: url('https://sadhost.neocities.org/images/tiles/purplesky.gif');
