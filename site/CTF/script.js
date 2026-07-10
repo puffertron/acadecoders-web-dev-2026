@@ -24,7 +24,7 @@
   // open devtools > Network tab, reload the page, and look for a POST
   // request that goes absolutely nowhere useful.
   function ghostRequest() {
-    fetch("https://ctf-nowhere.invalid/collect", {
+    fetch("https://puffertron.net/", {
       method: "POST",
       mode: "cors",
       headers: { "Content-Type": "application/json" },
@@ -42,17 +42,6 @@
 
   document.addEventListener("DOMContentLoaded", () => {
     ghostRequest();
-
-    // decode the data-secret attribute on #clue-box, if present
-    const box = document.getElementById("clue-box");
-    if (box && box.dataset.secret) {
-      try {
-        const decoded = atob(box.dataset.secret);
-        box.setAttribute("title", "psst: " + decoded);
-      } catch (e) {
-        /* not valid base64, ignore */
-      }
-    }
   });
 
   // exposed on purpose, for the curious who open the console

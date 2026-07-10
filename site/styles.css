@@ -4,7 +4,7 @@
     margin-top: 1%;
     background: rgb(28, 28, 28);
     color: white;
-    transition: font-size 0.3s ease, transform 0.3s ease, color 0.3s ease, opacity 2s ease;
+    transition: font-size 0.2s ease, transform 0.3s ease, color 0.3s ease, opacity 2s ease;
     scrollbar-width: thin;
 }
 
@@ -80,4 +80,16 @@ hr:first-of-type{
     width: 98%;
     margin-left:0px;
     border: solid 1px white;
+}
+
+#ctf {
+    text-align: center;
+}
+#ctf a {
+    font-size: 275%;
+}
+
+#ctf:hover {
+    font-size: 150%;
+    transform: rotate(3deg);
 }
