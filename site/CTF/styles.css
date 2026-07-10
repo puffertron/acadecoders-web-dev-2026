@@ -3,6 +3,8 @@
   --fg: #e8e8e8;
   --accent: #4cd964;
 
+  --scratch-puzzle: "https://scratch.mit.edu/projects/1352679888/";
+
   /* not everything in :root is a color... */
   --flag: "FLAG{css_custom_property_var}";
 }
